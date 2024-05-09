@@ -242,11 +242,11 @@ export namespace env {
     maxGas: u64,
     rawCoins: u64,
     params: StaticArray<u8>,
-  ): string;
+  ): StaticArray<u8>;
 
   @external("massa", "assembly_script_asc_call_exists")
-  export declare function ascCallExists(callId: string): bool;
+  export declare function ascCallExists(callId: StaticArray<u8>): bool;
 
   @external("massa", "assembly_script_asc_call_cancel")
-  export declare function ascCallCancel(callId: string): void;
+  export declare function ascCallCancel(callId: StaticArray<u8>): void;
 }

@@ -47,7 +47,7 @@ export function ascCallRegister(
   maxGas: u64,
   rawCoins: u64,
   params: StaticArray<u8>,
-): string {
+): StaticArray<u8> {
   return env.ascCallRegister(
     targetAddress,
     targetFunction,
@@ -66,7 +66,7 @@ export function ascCallRegister(
  *
  * @returns True if the ASC call exists otherwise false
  */
-export function ascCallExists(ascCallId: string): bool {
+export function ascCallExists(ascCallId: StaticArray<u8>): bool {
   return env.ascCallExists(ascCallId);
 }
 
@@ -75,6 +75,6 @@ export function ascCallExists(ascCallId: string): bool {
  *
  * @param ascCallId - The id of the ASC call
  */
-export function ascCallCancel(ascCallId: string): void {
+export function ascCallCancel(ascCallId: StaticArray<u8>): void {
   env.ascCallCancel(ascCallId);
 }
