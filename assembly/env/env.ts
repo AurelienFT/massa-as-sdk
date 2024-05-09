@@ -225,4 +225,28 @@ export namespace env {
 
   @external("massa", "assembly_script_chain_id")
   export declare function chainId(): u64;
+
+  @external("massa", "assembly_script_get_asc_call_fee")
+  export declare function getAscCallFee(
+    ascPeriod: u64,
+    ascThread: u8,
+    maxGas: u64,
+  ): u64;
+
+  @external("massa", "assembly_script_asc_call_register")
+  export declare function ascCallRegister(
+    targetAddress: string,
+    targetFunction: string,
+    targetPeriod: u64,
+    targetThread: u8,
+    maxGas: u64,
+    rawCoins: u64,
+    params: StaticArray<u8>,
+  ): string;
+
+  @external("massa", "assembly_script_asc_call_exists")
+  export declare function ascCallExists(callId: string): bool;
+
+  @external("massa", "assembly_script_asc_call_cancel")
+  export declare function ascCallCancel(callId: string): void;
 }
